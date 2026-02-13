@@ -33,6 +33,12 @@ ShowCodeCopyButtons = true
 ShowToc = true
 TocOpen = false
 
+  [params.assets]
+  favicon = "/phi.png"
+  favicon16x16 = "/phi.png"
+  favicon32x32 = "/phi.png"
+  apple_touch_icon = "/phi.png"
+
   [params.homeInfoParams]
   Title = "od-stack"
   Content = "Writing about tech, ideas, and things I find interesting"
