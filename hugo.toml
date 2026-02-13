@@ -1,0 +1,65 @@
+baseURL = 'https://omer-do.github.io/'
+languageCode = 'en-us'
+title = 'Mecha Blog'
+theme = 'PaperMod'
+[pagination]
+pagerSize = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[params]
+env = "production"
+author = "Omer Dolev"
+description = "A personal tech blog about cloud, containers, and Kubernetes"
+keywords = ["blog", "developer", "cloud", "kubernetes", "containers"]
+defaultTheme = "auto"
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowToc = true
+TocOpen = false
+
+  [params.homeInfoParams]
+  Title = "Mecha Blog"
+  Content = "Cloud, Containers, and Kubernetes"
+
+  [[params.socialIcons]]
+  name = "linkedin"
+  url = "https://linkedin.com/in/omerdlv"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/omer-do"
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = -100
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 50
+
+[[menu.main]]
+identifier = "archive"
+name = "Archive"
+url = "/archives/"
+weight = 60
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 70
