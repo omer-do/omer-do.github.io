@@ -2,8 +2,9 @@
 title: AWS Virtual Private Cloud
 author: Omer Dolev
 date: 2021-09-08 12:00:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing, aws, cloud]
+categories: [Tech]
+tags: [cloud, aws, networking]
+summary: "An introduction to AWS VPC — the foundation of cloud infrastructure, including CIDR ranges and regional scoping."
 ---
 
 ## Is My Private Cloud Real?

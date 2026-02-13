@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://omer-do.github.io/sitemap.xml

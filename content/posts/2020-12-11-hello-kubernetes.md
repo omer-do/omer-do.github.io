@@ -2,11 +2,15 @@
 title: Hello Kubernetes (K8s series - 1)
 author: Omer Dolev
 date: 2020-12-11 10:10:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing, kubernetes]
+categories: [Tech]
+tags: [kubernetes, containers, infrastructure]
+series: ["Kubernetes"]
+summary: "An introduction to Kubernetes — what it is, how deployments evolved from physical servers to containers, and why container orchestration matters."
+cover:
+  image: "/img/hello-kubernetes-1.png"
+  alt: "Hello Kubernetes"
+  hidden: false
 ---
-
-![Header Image](/img/hello-kubernetes-1.png)
 
 Kubernetes is a very big subject. I know people that have been working with it for years, and still dont have a good grasp on what's going on in certain parts.
 In the next few posts (a Kubernets series) I will go over the things I know about Kubernetes. We will delve into different concepts as we continue on.

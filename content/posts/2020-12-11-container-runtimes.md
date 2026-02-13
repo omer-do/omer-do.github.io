@@ -2,8 +2,10 @@
 title: Container Runtimes (K8s series - 3)
 author: Omer Dolev
 date: 2020-12-11 16:50:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing, kubernetes, containers]
+categories: [Tech]
+tags: [kubernetes, containers, infrastructure]
+series: ["Kubernetes"]
+summary: "What container runtimes are, the role of OCI standards, and the distinction between high-level and low-level runtimes."
 ---
 
 Remember all the things we now know about containers?

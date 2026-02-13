@@ -2,11 +2,15 @@
 title: Kubernetes Control Plane (K8s series - 5)
 author: Omer Dolev
 date: 2020-12-15 09:50:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing, kubernetes, containers]
+categories: [Tech]
+tags: [kubernetes, containers, infrastructure]
+series: ["Kubernetes"]
+summary: "How the Kubernetes control plane works — etcd, the API server, controllers, and the scheduler."
+cover:
+  image: "/img/kubernetes-control-plane-4.png"
+  alt: "Kubernetes Control Plane"
+  hidden: false
 ---
-
-![Header Image](/img/kubernetes-control-plane-4.png)
 
 ## Overview
 
