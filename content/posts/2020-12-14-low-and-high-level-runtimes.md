@@ -2,11 +2,15 @@
 title: Low and High Level Container Runtimes (K8s series - 4)
 author: Omer Dolev
 date: 2020-12-14 09:50:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing, kubernetes, containers]
+categories: [Tech]
+tags: [kubernetes, containers, infrastructure]
+series: ["Kubernetes"]
+summary: "Hands-on exploration of low-level container runtimes (cgroups, namespaces, runc) and high-level runtimes (Docker, containerd)."
+cover:
+  image: "/img/low-and-high-level-runtimes-1.png"
+  alt: "Low and High Level Container Runtimes"
+  hidden: false
 ---
-
-![Header Image](/img/low-and-high-level-runtimes-1.png)
 
 Let's have a short dive into the world of container runtimes, talking about low-level and high-level runtimes (which from now will be referred to
 as low-level runtimes and high-level runtimes).  

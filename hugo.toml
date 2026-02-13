@@ -1,9 +1,14 @@
 baseURL = 'https://omer-do.github.io/'
 languageCode = 'en-us'
-title = 'Mecha Blog'
+title = 'od-stack'
 theme = 'PaperMod'
 [pagination]
 pagerSize = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -17,8 +22,8 @@ minifyOutput = true
 [params]
 env = "production"
 author = "Omer Dolev"
-description = "A personal tech blog about cloud, containers, and Kubernetes"
-keywords = ["blog", "developer", "cloud", "kubernetes", "containers"]
+description = "Writing about tech, ideas, and things I find interesting"
+keywords = ["blog", "tech", "engineering", "ideas"]
 defaultTheme = "auto"
 ShowReadingTime = true
 ShowShareButtons = false
@@ -29,8 +34,8 @@ ShowToc = true
 TocOpen = false
 
   [params.homeInfoParams]
-  Title = "Mecha Blog"
-  Content = "Cloud, Containers, and Kubernetes"
+  Title = "od-stack"
+  Content = "Writing about tech, ideas, and things I find interesting"
 
   [[params.socialIcons]]
   name = "linkedin"

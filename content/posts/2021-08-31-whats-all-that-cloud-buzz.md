@@ -2,11 +2,14 @@
 title: Cloud Services
 author: Omer Dolev
 date: 2021-08-31 16:26:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing, aws, cloud]
+categories: [Tech]
+tags: [cloud, aws]
+summary: "What cloud computing is, how billing works, and an overview of cloud service models (IaaS, PaaS, SaaS) with AWS as an example."
+cover:
+  image: "/img/whats-all-that-cloud-buzz-pic-1.png"
+  alt: "Cloud Services Overview"
+  hidden: false
 ---
-
-![Header Image](/img/whats-all-that-cloud-buzz-pic-1.png)
 
 ## What's All That Cloud Buzz?!
 

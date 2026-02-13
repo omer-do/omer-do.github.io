@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kubernetes on od-stack</title>
+    <link>https://omer-do.github.io/series/kubernetes/</link>
+    <description>Recent content in Kubernetes on od-stack</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Dec 2020 09:50:00 +0800</lastBuildDate>
+    <atom:link href="https://omer-do.github.io/series/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes - How It Fits Together (K8s series - 6)</title>
+      <link>https://omer-do.github.io/posts/2020-12-16-how-it-all-fits-together/</link>
+      <pubDate>Wed, 16 Dec 2020 09:50:00 +0800</pubDate>
+      <guid>https://omer-do.github.io/posts/2020-12-16-how-it-all-fits-together/</guid>
+      <description>How pods leverage Linux namespaces to share environments between containers, plus a look at the Kubelet and Kube-proxy.</description>
+    </item>
+    <item>
+      <title>Kubernetes Control Plane (K8s series - 5)</title>
+      <link>https://omer-do.github.io/posts/2020-12-15-kubernetes-control-plane/</link>
+      <pubDate>Tue, 15 Dec 2020 09:50:00 +0800</pubDate>
+      <guid>https://omer-do.github.io/posts/2020-12-15-kubernetes-control-plane/</guid>
+      <description>How the Kubernetes control plane works — etcd, the API server, controllers, and the scheduler.</description>
+    </item>
+    <item>
+      <title>Low and High Level Container Runtimes (K8s series - 4)</title>
+      <link>https://omer-do.github.io/posts/2020-12-14-low-and-high-level-runtimes/</link>
+      <pubDate>Mon, 14 Dec 2020 09:50:00 +0800</pubDate>
+      <guid>https://omer-do.github.io/posts/2020-12-14-low-and-high-level-runtimes/</guid>
+      <description>Hands-on exploration of low-level container runtimes (cgroups, namespaces, runc) and high-level runtimes (Docker, containerd).</description>
+    </item>
+    <item>
+      <title>Container Runtimes (K8s series - 3)</title>
+      <link>https://omer-do.github.io/posts/2020-12-11-container-runtimes/</link>
+      <pubDate>Fri, 11 Dec 2020 16:50:00 +0800</pubDate>
+      <guid>https://omer-do.github.io/posts/2020-12-11-container-runtimes/</guid>
+      <description>What container runtimes are, the role of OCI standards, and the distinction between high-level and low-level runtimes.</description>
+    </item>
+    <item>
+      <title>Containers (K8s series - 2)</title>
+      <link>https://omer-do.github.io/posts/2020-12-11-containers/</link>
+      <pubDate>Fri, 11 Dec 2020 12:40:00 +0800</pubDate>
+      <guid>https://omer-do.github.io/posts/2020-12-11-containers/</guid>
+      <description>A deep dive into what Linux containers actually are — namespaces, cgroups, and how they differ from virtual machines.</description>
+    </item>
+    <item>
+      <title>Hello Kubernetes (K8s series - 1)</title>
+      <link>https://omer-do.github.io/posts/2020-12-11-hello-kubernetes/</link>
+      <pubDate>Fri, 11 Dec 2020 10:10:00 +0800</pubDate>
+      <guid>https://omer-do.github.io/posts/2020-12-11-hello-kubernetes/</guid>
+      <description>An introduction to Kubernetes — what it is, how deployments evolved from physical servers to containers, and why container orchestration matters.</description>
+    </item>
+  </channel>
+</rss>

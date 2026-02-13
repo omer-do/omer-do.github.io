@@ -2,11 +2,15 @@
 title: Containers (K8s series - 2)
 author: Omer Dolev
 date: 2020-12-11 12:40:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing, kubernetes, containers]
+categories: [Tech]
+tags: [kubernetes, containers, linux]
+series: ["Kubernetes"]
+summary: "A deep dive into what Linux containers actually are — namespaces, cgroups, and how they differ from virtual machines."
+cover:
+  image: "/img/containers-1.png"
+  alt: "Linux Containers"
+  hidden: false
 ---
-
-![Header Image](/img/containers-1.png)
 
 Containers are awesome. At first they sound quite simple, but they enable many things that weren't possible before. Here I will explain what are containers in a bit of a deep-dive so you can truly understand what they are.
 

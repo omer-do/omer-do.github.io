@@ -2,11 +2,15 @@
 title: Kubernetes - How It Fits Together (K8s series - 6)
 author: Omer Dolev
 date: 2020-12-16 09:50:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing, kubernetes, containers]
+categories: [Tech]
+tags: [kubernetes, containers, infrastructure]
+series: ["Kubernetes"]
+summary: "How pods leverage Linux namespaces to share environments between containers, plus a look at the Kubelet and Kube-proxy."
+cover:
+  image: "/img/how-it-all-fits-together-1.png"
+  alt: "Kubernetes Architecture Overview"
+  hidden: false
 ---
-
-![Header Image](/img/how-it-all-fits-together-1.png)
 
 ## Going to the Roots
 
