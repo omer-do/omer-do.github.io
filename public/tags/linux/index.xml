@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on od-stack</title>
-    <link>https://omer-do.github.io/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on od-stack</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Dec 2020 12:40:00 +0800</lastBuildDate>
-    <atom:link href="https://omer-do.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Containers (K8s series - 2)</title>
-      <link>https://omer-do.github.io/posts/2020-12-11-containers/</link>
+      <link>http://localhost:1313/posts/2020-12-11-containers/</link>
       <pubDate>Fri, 11 Dec 2020 12:40:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/posts/2020-12-11-containers/</guid>
+      <guid>http://localhost:1313/posts/2020-12-11-containers/</guid>
       <description>A deep dive into what Linux containers actually are — namespaces, cgroups, and how they differ from virtual machines.</description>
     </item>
   </channel>

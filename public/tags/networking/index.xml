@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Networking on od-stack</title>
-    <link>https://omer-do.github.io/tags/networking/</link>
+    <link>http://localhost:1313/tags/networking/</link>
     <description>Recent content in Networking on od-stack</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Sep 2021 12:00:00 +0800</lastBuildDate>
-    <atom:link href="https://omer-do.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS Virtual Private Cloud</title>
-      <link>https://omer-do.github.io/posts/2021-09-08-aws-virtual-private-cloud/</link>
+      <link>http://localhost:1313/posts/2021-09-08-aws-virtual-private-cloud/</link>
       <pubDate>Wed, 08 Sep 2021 12:00:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/posts/2021-09-08-aws-virtual-private-cloud/</guid>
+      <guid>http://localhost:1313/posts/2021-09-08-aws-virtual-private-cloud/</guid>
       <description>An introduction to AWS VPC — the foundation of cloud infrastructure, including CIDR ranges and regional scoping.</description>
     </item>
   </channel>

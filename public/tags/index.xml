@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on od-stack</title>
-    <link>https://omer-do.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on od-stack</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Sep 2021 12:00:00 +0800</lastBuildDate>
-    <atom:link href="https://omer-do.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aws</title>
-      <link>https://omer-do.github.io/tags/aws/</link>
+      <link>http://localhost:1313/tags/aws/</link>
       <pubDate>Wed, 08 Sep 2021 12:00:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/tags/aws/</guid>
+      <guid>http://localhost:1313/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloud</title>
-      <link>https://omer-do.github.io/tags/cloud/</link>
+      <link>http://localhost:1313/tags/cloud/</link>
       <pubDate>Wed, 08 Sep 2021 12:00:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/tags/cloud/</guid>
+      <guid>http://localhost:1313/tags/cloud/</guid>
       <description></description>
     </item>
     <item>
       <title>Networking</title>
-      <link>https://omer-do.github.io/tags/networking/</link>
+      <link>http://localhost:1313/tags/networking/</link>
       <pubDate>Wed, 08 Sep 2021 12:00:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/tags/networking/</guid>
+      <guid>http://localhost:1313/tags/networking/</guid>
       <description></description>
     </item>
     <item>
       <title>Containers</title>
-      <link>https://omer-do.github.io/tags/containers/</link>
+      <link>http://localhost:1313/tags/containers/</link>
       <pubDate>Wed, 16 Dec 2020 09:50:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/tags/containers/</guid>
+      <guid>http://localhost:1313/tags/containers/</guid>
       <description></description>
     </item>
     <item>
       <title>Infrastructure</title>
-      <link>https://omer-do.github.io/tags/infrastructure/</link>
+      <link>http://localhost:1313/tags/infrastructure/</link>
       <pubDate>Wed, 16 Dec 2020 09:50:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/tags/infrastructure/</guid>
+      <guid>http://localhost:1313/tags/infrastructure/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
-      <link>https://omer-do.github.io/tags/kubernetes/</link>
+      <link>http://localhost:1313/tags/kubernetes/</link>
       <pubDate>Wed, 16 Dec 2020 09:50:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/tags/kubernetes/</guid>
+      <guid>http://localhost:1313/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://omer-do.github.io/tags/linux/</link>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Fri, 11 Dec 2020 12:40:00 +0800</pubDate>
-      <guid>https://omer-do.github.io/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
   </channel>
