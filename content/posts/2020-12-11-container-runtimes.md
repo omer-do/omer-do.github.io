@@ -9,7 +9,7 @@ summary: "What container runtimes are, the role of OCI standards, and the distin
 ---
 
 Remember all the things we now know about containers?
-So every time we want a container we need to create different namespaces and then spawn the process, and when the process exits we need remove them all
+So every time we want a container we need to create different namespaces and then spawn the process, and when the process exits we need to remove them all
 and do some cleanup? NO...
 
 This is what container runtimes are for. As you will see in a moment there are many runtimes, and they are usually called low-level or high-level runtimes.
@@ -40,12 +40,12 @@ product, but aren't really dependent on one another. For example:
 
 To standardize this, Docker, Google, CoreOS and other leaders in the container industry created the OCI (Open Container Initiative). Docker contributed a standard
 way of running containers as a library called [runc](https://github.com/opencontainers/runc) to the OCI (and that's it, nothing pertaining images or management was
-standardized by docker for the OCI).
+standardized by Docker for the OCI).
 
 ### High-level and Low-level Runtimes
 
 If we list a few of the common container runtimes, we can see: runc, lxc, lmctfy, docker (containerd), rkt, cri-o.
-Each one, implements different functionalities in the runtime stack.
+Each one implements different functionalities in the runtime stack.
 
 ![runtimes_pic](/img/runtimes.png "Title")
 
@@ -55,9 +55,9 @@ as well as API for these operations.
 Low-level runtime is attributed to runtimes that focus on just the part of running the container itself, those that actually use the features
 of the underlying kernel (namespaces and cgroups in the case of Linux containers).
 
-The thing is you can't really divide runtimes to high-level ones and low-level ones, since there are runtimes that implement the whole stack of functionality.
+The thing is you can't really divide runtimes into high-level ones and low-level ones, since there are runtimes that implement the whole stack of functionality.
 
-**_Func Fact:_** cri-o and container-d are leaning more to the high-level side, and they both use runc as a low-level container runtime. So if you take a, say,
+**_Fun Fact:_** cri-o and container-d are leaning more to the high-level side, and they both use runc as a low-level container runtime. So if you take a, say,
 low-level runtime developer perspective, the high-level runtime isn't really a runtime. But from an SRE or developer POV, this is the interface to the container
 management, so it kind of "wraps" the low-level runtime.
 

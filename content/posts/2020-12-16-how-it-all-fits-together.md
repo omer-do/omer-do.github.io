@@ -16,7 +16,7 @@ cover:
 
 There is much much more to talk about the control plane, but that's for more specific posts. Eventually, what we want to do in K8s is actually running workloads in the form of Pods.
 
-What's a Pod? It's components? You can read about it from a high-level perspective in the [official documentation](https://kubernetes.io/docs/concepts/workloads/pods/).  
+What's a Pod? Its components? You can read about it from a high-level perspective in the [official documentation](https://kubernetes.io/docs/concepts/workloads/pods/).  
 Rewinding back to the containers post, we remember that Linux containers are not really "containers" they are normal processes, executed using 2 features of the Linux Kernel: Namespaces and Control Groups (cgroups).
 
 Pod is actually taking these namespaces and cgroups and leveraging them to make some cool stuff with "containers". Normally, people see pods like standalone boxes.
@@ -77,12 +77,12 @@ A pod would look closer to something like this:
 
 **_NOTE_**: For those who know K8s already the cgroup there is why you can configure resources per container in the pod spec.
 
-One very good use-case for more than one container in a pod is service meshes for example. [Istio](https://istio.io/) (one of the most famous service meshes) usually implemented using what's called a side-car container.
-Meaning that it "injects" another container to the pod, that runs along with the application pod and has a view into what's going on in the pods environment. The sidecar also acts as a gateway having every packet in and out of the pod go through it, letting it extract lots of data, while enabling smart and granular enforcement of net policies.
+One very good use-case for more than one container in a pod is service meshes for example. [Istio](https://istio.io/) (one of the most famous service meshes) is usually implemented using what's called a side-car container.
+Meaning that it "injects" another container to the pod, that runs along with the application pod and has a view into what's going on in the pod's environment. The sidecar also acts as a gateway having every packet in and out of the pod go through it, letting it extract lots of data, while enabling smart and granular enforcement of net policies.
 
 ## The Kubelet and Kube-proxy
 
-The only piece of the puzzle left, is what's going on the K8s Nodes. The nodes are servers that actually run the containers and the components running there are the Kubelet and the Kube-proxy.  
+The only piece of the puzzle left, is what's going on in the K8s Nodes. The nodes are servers that actually run the containers and the components running there are the Kubelet and the Kube-proxy.  
 You might call them the K8s field agents :)
 
 These are the pieces of K8s that do the field work.  
@@ -91,7 +91,7 @@ The Kube-proxy, as its name implies, is more related to the network side, specif
 
 The CNI (the implementation for network in K8s) is usually a pod or a service that runs on the node (not included in Kubelet or Kube-proxy), which configures the overlay network.
 
-**_Fun Fact_**: If you run *docker ps* on a K8s node, you might notice that there are more containers than you think. In particular, you will have an additional container for each pod whose name is k8s_POD... and it's command is /pause. This container has a few functionalities and it'll be discussed in a future post.
+**_Fun Fact_**: If you run *docker ps* on a K8s node, you might notice that there are more containers than you think. In particular, you will have an additional container for each pod whose name is k8s_POD... and its command is /pause. This container has a few functionalities and it'll be discussed in a future post.
 
 Here is a nice chart showing an overall view of kubernetes (image is link to K8s Docs page):
 

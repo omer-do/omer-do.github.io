@@ -10,7 +10,7 @@ summary: "An introduction to AWS VPC — the foundation of cloud infrastructure,
 ## Is My Private Cloud Real?
 
 The VPC is the foundation of your infrastructure in the cloud. It's a general idea (used by providers) of a way you (the customer) can use the provider's resources. The following is going to be based on AWS (since that's what I have experience in). 
-For that purpose you create a kind of an overlay network in their infrastructure and this network will contain all the resources and services you utilize. This network, it's components and configurations comprise your Virtual Private Cloud (VPC).
+For that purpose you create a kind of an overlay network in their infrastructure and this network will contain all the resources and services you utilize. This network, its components and configurations comprise your Virtual Private Cloud (VPC).
 
 The VPC is a REGIONAL service!  
 Meaning, a single VPC cannot contain resources spanning across different regions. Once you choose the region for your VPC you configure a CIDR (Classless inter-domain routing) range for your network (e.g. 10.0.0.0/16).
