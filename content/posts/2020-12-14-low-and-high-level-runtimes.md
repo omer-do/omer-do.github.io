@@ -15,8 +15,8 @@ cover:
 Let's have a short dive into the world of container runtimes, talking about low-level and high-level runtimes (which from now will be referred to
 as low-level runtimes and high-level runtimes).  
 
-As mentioned in the previous post, conatiners (in Linux of course) are implemented by Linux namespaces and cgroups. Namespaces help you virtualize
-the environment while cgroups helps you limit resources consumed by a process. The main responsibility of the low-level runtimes is the creation and
+As mentioned in the previous post, containers (in Linux of course) are implemented by Linux namespaces and cgroups. Namespaces help you virtualize
+the environment while cgroups help you limit resources consumed by a process. The main responsibility of the low-level runtimes is the creation and
 configuration of such namespaces and cgroups for containers, and then execution inside those namespaces and cgroups (this is the core functionality
 of the low-level runtimes, which usually implement more features).
 
@@ -34,7 +34,7 @@ sudo apt-get install libcgroup-tools bc
 We will use a simple container FS as our base FS for our container:
 
 ```bash
-# creating a sample container and exporting it's FS to a tmp dir
+# creating a sample container and exporting its FS to a tmp dir
 CID=$(docker create busybox)
 ROOTFS=$(mktemp -d)
 docker export $CID | tar -xf - -C $ROOTFS
@@ -51,12 +51,12 @@ cgcreate -g cpu,memory:$UUID
 cgset -r memory.limit_in_bytes=100000000 $UUID
 # configuring cpu shares to 512
 cgset -r cpu.shares=512 $UUID
-# we will use the cfs mechanism here (will be explained in a seperate post)
+# we will use the cfs mechanism here (will be explained in a separate post)
 cgset -r cpu.cfs_period_us=1000000 $UUID
 cgset -r cpu.cfs_quota_us=2000000 $UUID
 ```
 
-OK! We create our container sandbox! Lets execute a command in the container:
+OK! We created our container sandbox! Let's execute a command in the container:
 
 ```bash
 $ cgexec -g cpu,memory:$UUID \
@@ -121,7 +121,7 @@ what a nice container
 
 There are also other container runtimes you can use such as lmctfy and rkt, but for now let's continue on.
 
-**_Fun Fact:_** In addition, there's [systemd-nspawn](https://wiki.archlinux.org/index.php/Systemd-nspawn) which enables runnning a command or even an OS in a light-weight namespace container, it resembles the chroot command (which changes your root dir) from a user POV, but actually, it fully virtualizes the FS as well as the hostname,
+**_Fun Fact:_** In addition, there's [systemd-nspawn](https://wiki.archlinux.org/index.php/Systemd-nspawn) which enables running a command or even an OS in a light-weight namespace container, it resembles the chroot command (which changes your root dir) from a user POV, but actually, it fully virtualizes the FS as well as the hostname,
 process tree and various IPC subsystems.
 
 # Getting Back Up
@@ -143,9 +143,9 @@ Those pieces of high and low level functionalities were divided into separate pr
 
 *containerd* has a client cli called containerd-ctr (the command itself is *ctr*) usually used for debugging and development.
 
-Another component people sometimes miss is *container-shim*. Which helps solving the daemon-ed containers problem. By daemon-ed container problem, I mean, that when *dockerd* is running a container, the container is now a child process of *dockerd*, so *dockerd* has to keep running for the container to keep running. What if I want to upgrade Docker (and inheritingly *dockerd*)? Also, how do I get the exit code of the container? What are the file descriptors (stdin, stdout and stderr) of the container?
+Another component people sometimes miss is *container-shim*. Which helps solving the daemon-ed containers problem. By daemon-ed container problem, I mean, when *dockerd* is running a container, the container is now a child process of *dockerd*, so *dockerd* has to keep running for the container to keep running. What if I want to upgrade Docker (and inheritingly *dockerd*)? Also, how do I get the exit code of the container? What are the file descriptors (stdin, stdout and stderr) of the container?
 
-For that *container-shim* exists. When runtimes start the container, *containerd-shim* allows *runc* to exit because it's there to be the parent of the container when *runc* exits. It keeps the file descriptors open in case containerd or dockerd die for some reason. Also it allow the container exit code to be reported back to a higher level tool (Docker for example) without it having to be the parent of the container and wait for it to exit.
+For that *container-shim* exists. When runtimes start the container, *containerd-shim* allows *runc* to exit because it's there to be the parent of the container when *runc* exits. It keeps the file descriptors open in case containerd or dockerd die for some reason. Also it allows the container exit code to be reported back to a higher level tool (Docker for example) without it having to be the parent of the container and wait for it to exit.
 
 ## So let's see it in practice
 

@@ -12,8 +12,8 @@ cover:
   hidden: false
 ---
 
-Kubernetes is a very big subject. I know people that have been working with it for years, and still dont have a good grasp on what's going on in certain parts.
-In the next few posts (a Kubernets series) I will go over the things I know about Kubernetes. We will delve into different concepts as we continue on.
+Kubernetes is a very big subject. I know people that have been working with it for years, and still don't have a good grasp on what's going on in certain parts.
+In the next few posts (a Kubernetes series) I will go over the things I know about Kubernetes. We will delve into different concepts as we continue on.
 
 **_NOTE:_** From now on I will mostly write "K8s" instead of "Kubernetes".
 
@@ -24,10 +24,10 @@ In the next few posts (a Kubernets series) I will go over the things I know abou
 To find an answer to that question you can visit K8s docs, but if you are already here then, K8s is summed up most of the times as a container orchestrator.
 When you look at it pragmatically it's what most of the job of K8s is, running containers. But in reality it's much much more than that.
 
-There are many different factors embedded in the notion of running containers, and K8s let's you control that if you like. Making things flexible when needed but it also
+There are many different factors embedded in the notion of running containers, and K8s lets you control that if you like. Making things flexible when needed but it also
 enables automation.
 
-We can start understanding things if we look at the state things were before it container orchestration solutions were common. We are actually talking about how things were
+We can start understanding things if we look at the state things were before container orchestration solutions were common. We are actually talking about how things were
 deployed and running over time.
 
 **_NOTE:_** When writing "workload", I mean anything that does processing, anything that runs code or runs some sort of logic, whether it is handling requests, doing some async processing etc.
@@ -38,21 +38,21 @@ Running workloads on physical servers. There are lots of problems with this appr
 
 #### Virtualized Deployments
 
-Virtualization is a way to run multiple virtual machines (VMs) on one physical server. This is actually running multiple Operating systems (Linux, Windows, Embedded or whatever) concurrently on the same physical machine that are independent of one another. This was the time when deploying virtual machines runnning the different applications and services was common.
+Virtualization is a way to run multiple virtual machines (VMs) on one physical server. This is actually running multiple Operating systems (Linux, Windows, Embedded or whatever) concurrently on the same physical machine that are independent of one another. This was the time when deploying virtual machines running the different applications and services was common.
 
 #### Containerized Deployments
 
-Deployment of workloads as containers. We will have a post about what are containers exactly. For now let's think about them as very lightweight VMs. This is the present, in which deployment of application on containers is very common.
+Deployment of workloads as containers. We will have a post about what are containers exactly. For now let's think about them as very lightweight VMs. This is the present, in which deployment of applications on containers is very common.
 
 
-So now, in a time where running application is mainly done by containers, there is something very important to keep in mind, and it's the availability of your application.
-When an application expriences a fault or a panic in the [Traditional Deployments](#traditional-deployments) era, the relevant team would be alerted and would go straight to the server to fix, and later will try to understand what happened (in this case most of fixes are restarts).
-The same thing holds for VMs ([Virtualized Deployments](#virtualized-deployments)), where you relevant team would check the problem, fix, and try to understand the root cause.
+So now, in a time where running applications is mainly done by containers, there is something very important to keep in mind, and it's the availability of your application.
+When an application experiences a fault or a panic in the [Traditional Deployments](#traditional-deployments) era, the relevant team would be alerted and would go straight to the server to fix, and later will try to understand what happened (in this case most of fixes are restarts).
+The same thing holds for VMs ([Virtualized Deployments](#virtualized-deployments)), where your relevant team would check the problem, fix, and try to understand the root cause.
 
 But, in the [containers](#containerized-deployments) era something changed. A new outlook surfaced, in which workloads are **volatile**. It became very easy to just start a new container running the required workload instead of trying to fix the problem while there is downtime or degraded availability (downtime - when the service is unavailable).
 
 This is where K8s comes in, it provides you with a framework and tools to run distributed systems resiliently.
-Distributed systems are systems or a group of workloads that run on a number of machines (can range from a few to dozens and hundreds or more), which in it's simplest form can technically be achieved quite easily (it gets complicated when new use-cases arise, but we'll get into that).
+Distributed systems are systems or a group of workloads that run on a number of machines (can range from a few to dozens and hundreds or more), which in its simplest form can technically be achieved quite easily (it gets complicated when new use-cases arise, but we'll get into that).
 
 K8s gives you:
 
