@@ -124,7 +124,7 @@ what a nice container
 
 There are also other container runtimes you can use such as lmctfy and rkt (both are archived and no longer maintained), but for now let's continue on.
 
-**_Fun Fact:_** In addition, there's [systemd-nspawn](https://wiki.archlinux.org/index.php/Systemd-nspawn) which enables running a command or even an OS in a light-weight namespace container, it resembles the chroot command (which changes your root dir) from a user POV, but actually, it fully virtualizes the FS as well as the hostname,
+**_Fun Fact:_** In addition, there's [systemd-nspawn](https://wiki.archlinux.org/title/Systemd-nspawn) which enables running a command or even an OS in a light-weight namespace container, it resembles the chroot command (which changes your root dir) from a user POV, but actually, it fully virtualizes the FS as well as the hostname,
 process tree and various IPC subsystems.
 
 ## Getting Back Up
