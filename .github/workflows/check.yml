@@ -1,0 +1,38 @@
+name: Check
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.155.3
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Sanity check
+        run: ./scripts/sanity-check.sh
+      # Internal links are covered by Hugo's ref (fails the build); this checks external ones.
+      # LinkedIn/X block bots, so they always look broken.
+      - name: Check external links
+        uses: lycheeverse/lychee-action@v2.8.0
+        with:
+          args: >-
+            --no-progress
+            --root-dir '${{ github.workspace }}/public'
+            --exclude '^https://omer-do\.github\.io'
+            --exclude 'linkedin\.com'
+            --exclude '(x|twitter)\.com'
+            'public/**/*.html'
+          fail: true
