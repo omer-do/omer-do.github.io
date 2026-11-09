@@ -30,6 +30,7 @@ jobs:
         with:
           args: >-
             --no-progress
+            --root-dir '${{ github.workspace }}/public'
             --exclude '^https://omer-do\.github\.io'
             --exclude 'linkedin\.com'
             --exclude '(x|twitter)\.com'
