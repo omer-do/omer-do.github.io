@@ -2,6 +2,11 @@ baseURL = 'https://omer-do.github.io/'
 languageCode = 'en-us'
 title = 'od-stack'
 theme = 'PaperMod'
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
 [pagination]
 pagerSize = 10
 
@@ -9,11 +14,6 @@ pagerSize = 10
 category = "categories"
 tag = "tags"
 series = "series"
-
-enableRobotsTXT = true
-buildDrafts = false
-buildFuture = false
-buildExpired = false
 
 [minify]
 disableXML = true
