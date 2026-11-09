@@ -20,7 +20,7 @@ the environment while cgroups help you limit resources consumed by a process. Th
 configuration of such namespaces and cgroups for containers, and then execution inside those namespaces and cgroups (this is the core functionality
 of the low-level runtimes, which usually implement more features).
 
-# Let's Go Low :)
+## Let's Go Low :)
 
 **_NOTE:_** Based on Ian Lewis [post](https://www.ianlewis.org/en/container-runtimes-part-2-anatomy-low-level-contai)
 
@@ -28,7 +28,7 @@ I am working on Ubuntu, so to control cgroups you need to run the following (all
 
 ```bash
 # install cgroups control commands
-sudo apt-get install libcgroup-tools bc
+sudo apt-get install cgroup-tools bc
 ```
 
 We will use a simple container FS as our base FS for our container:
@@ -56,7 +56,10 @@ cgset -r cpu.cfs_period_us=1000000 $UUID
 cgset -r cpu.cfs_quota_us=2000000 $UUID
 ```
 
-OK! We created our container sandbox! Let's execute a command in the container:
+**_NOTE:_** These are cgroup v1 knobs. Most current distros (e.g. Ubuntu 21.10+) default to cgroup v2, where the equivalents are
+`memory.max` and `cpu.max`/`cpu.weight`. Check with `stat -fc %T /sys/fs/cgroup` (`cgroup2fs` means v2).
+
+OK! We created the cgroups. Now let's create the namespaces (with `unshare`) and execute a command in the container:
 
 ```bash
 $ cgexec -g cpu,memory:$UUID \
@@ -76,7 +79,7 @@ cgdelete -r -g cpu,memory:$UUID
 rm -r $ROOTFS
 ```
 
-One of the most common low-level container runtimes is [*runc*](https://github.com/opencontainers/*runc*) (which by the way, is written in GoLang).  
+One of the most common low-level container runtimes is [*runc*](https://github.com/opencontainers/runc) (which by the way, is written in GoLang).  
 *runc* implements the OCI runtime spec, so for running a container with *runc* you need a root FS for the container, and a config.json file.
 
 Let's run a container with *runc*:
@@ -119,12 +122,12 @@ what a nice container
 / #
 ```
 
-There are also other container runtimes you can use such as lmctfy and rkt, but for now let's continue on.
+There are also other container runtimes you can use such as lmctfy and rkt (both are archived and no longer maintained), but for now let's continue on.
 
-**_Fun Fact:_** In addition, there's [systemd-nspawn](https://wiki.archlinux.org/index.php/Systemd-nspawn) which enables running a command or even an OS in a light-weight namespace container, it resembles the chroot command (which changes your root dir) from a user POV, but actually, it fully virtualizes the FS as well as the hostname,
+**_Fun Fact:_** In addition, there's [systemd-nspawn](https://wiki.archlinux.org/title/Systemd-nspawn) which enables running a command or even an OS in a light-weight namespace container, it resembles the chroot command (which changes your root dir) from a user POV, but actually, it fully virtualizes the FS as well as the hostname,
 process tree and various IPC subsystems.
 
-# Getting Back Up
+## Getting Back Up
 
 High-level container runtime functionality is not really about running the container, it is more about the format and management of images, then passing it over to the low-level runtime to actually run the container.
 Usually these runtimes will provide a daemon layer, or an API to perform those image and container management actions.

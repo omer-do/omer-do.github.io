@@ -73,14 +73,14 @@ ip netns exec nstest ip route add default via 10.200.1.1        # This adds a ro
 ```
 
 We are almost there, but for the internet connection we want to enable forwarding in the system namespace and share internet access between the host and nstest.
-This is done by enabling forwarding using the iptables interface.
+This is done by enabling IP forwarding in the kernel, then using iptables to allow forwarding and NAT (masquerade) traffic from nstest.
 
 ```bash
 echo 1 > /proc/sys/net/ipv4/ip_forward                       # by default there's a '0' there disabling this
 iptables -P FORWARD DROP                                     # setting default policy in the FORWARD chain to DROP
 iptables -F FORWARD                                          # flushing forward rules
 iptables -t nat -F                                           # flushing nat rules
-iptables -t nat -A POSTROUTING -s 10:200.1.0/255.255.255.0 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 10.200.1.0/24 -o eth0 -j MASQUERADE
 iptables -A FORWARD -i eth0 -o v-eth1 -j ACCEPT              # Allowing forwarding between eth0 and v-eth1
 iptables -A FORWARD -o eth0 -i v-eth1 -j ACCEPT              # both ways
 ```

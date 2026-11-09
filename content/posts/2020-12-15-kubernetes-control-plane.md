@@ -39,7 +39,7 @@ In addition, it's also good if we have a standard way of interactions between co
 
 ![Image2](/img/kubernetes-control-plane-2.png)
 
-That's where ETCD and the API server of K8s come into play. ETCD is a RESTful hierarchical distributed key-value datastore that can handle large scales (highly available), supports watching (watching for changes of entries)
+That's where ETCD and the API server of K8s come into play. ETCD is a distributed key-value datastore (exposing a gRPC API since v3, which is what K8s uses) that can handle large scales (highly available), supports watching (watching for changes of entries)
 and secure connections.
 
 **_Fun Fact_**: ETCD uses the raft consensus algorithm to create a quorum for leader election. The leader is the member through which writes are committed to ensure consistency between members' data.
@@ -67,7 +67,7 @@ The doers of the control plane: the controller manager, and the scheduler.
 
 The controller manager is responsible for the controllers, the parts that really do stuff. So what's a controller?
 
-A very good explanation is in the [K8s official Docs](https://kubernetes.io/docs/admin/kube-controller-manager/):
+A very good explanation is in the [K8s official Docs](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/):
 
 > In applications of robotics and automation, a control loop is a non-terminating loop that regulates the state of the system. In Kubernetes, a controller is a control loop that watches the shared state of the cluster through the API server and makes changes attempting to move the current state towards the desired state. Examples of controllers that ship with Kubernetes today are the replication controller, endpoints controller, namespace controller, and serviceaccounts controller.
 
@@ -98,8 +98,8 @@ We could imagine the control loop like so
 while True:
     pods = get_all_pods()
     for pod in pods:
-        if pod.node == nil:
-            assignNode(pod)
+        if pod.node is None:
+            assign_node(pod)
 ```
 
 It's not exactly like that though...
@@ -113,7 +113,7 @@ After a little bit of digging, what actually happens inside the scheduler is:
 But what happens if a pod fails? If there is an error when scheduling the pod, it calls an error handler, and the error handler puts it back in the queue.
 
 Ok wait... isn't the previous Python implementation better? for performance reasons, no...  
-For more info about scheduling optimizations read at the following: [CoreOS - Improving Kubernetes Scheduler Performance](https://coreos.com/blog/improving-kubernetes-scheduler-performance.html)
+For more info about scheduling optimizations read at the following: [CoreOS - Improving Kubernetes Scheduler Performance](https://web.archive.org/web/2017/https://coreos.com/blog/improving-kubernetes-scheduler-performance.html)
 
 **_Fun Fact_**: The scheduler uses an Informer too (like controllers usually do)
 

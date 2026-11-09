@@ -19,7 +19,7 @@ One of the most famous container runtimes is Docker. But since Docker's release 
 
 ## Let's start some containers! oh... wait...
 
-Before we continue we need to understand how a runtime systemizes container creation. In the [previous post](https://omerdolev.github.io/posts/containers/)
+Before we continue we need to understand how a runtime systemizes container creation. In the [previous post]({{< ref "2020-12-11-containers" >}})
 we saw that containers are actually processes that live in different namespaces than the system ones. But there is one important thing we didn't mention.
 
 If a container is a process, and the process spawns in a different mnt namespace (a different filesystem basically), don't we need the executable to be in the
@@ -39,8 +39,8 @@ product, but aren't really dependent on one another. For example:
 - sharing container images
 
 To standardize this, Docker, Google, CoreOS and other leaders in the container industry created the OCI (Open Container Initiative). Docker contributed a standard
-way of running containers as a library called [runc](https://github.com/opencontainers/runc) to the OCI (and that's it, nothing pertaining images or management was
-standardized by Docker for the OCI).
+way of running containers as a library called [runc](https://github.com/opencontainers/runc) to the OCI. Docker also donated its image format, which became the basis of the OCI image spec. Image building and management
+were not standardized and remained up to each tool.
 
 ### High-level and Low-level Runtimes
 
@@ -57,7 +57,7 @@ of the underlying kernel (namespaces and cgroups in the case of Linux containers
 
 The thing is you can't really divide runtimes into high-level ones and low-level ones, since there are runtimes that implement the whole stack of functionality.
 
-**_Fun Fact:_** cri-o and container-d are leaning more to the high-level side, and they both use runc as a low-level container runtime. So if you take a, say,
+**_Fun Fact:_** cri-o and containerd are leaning more to the high-level side, and they both use runc as a low-level container runtime. So if you take a, say,
 low-level runtime developer perspective, the high-level runtime isn't really a runtime. But from an SRE or developer POV, this is the interface to the container
 management, so it kind of "wraps" the low-level runtime.
 
